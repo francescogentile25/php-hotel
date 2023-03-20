@@ -71,8 +71,16 @@ foreach ($hotels as $hotel) {
                 <?php foreach ($hotels as $hotel): ?>
                     <tr>
                         <td><?php echo $hotel["name"]; ?></td>
-                        <td><?php echo $hotel["parking"]; ?></td>
-                        <td><?php echo $hotel["vote"]; ?></td>
+                        <td>
+                        <?php  
+                                if ($hotel ["parking"] ==1){
+                                    echo "disponibile";
+                                }else{
+                                    echo "non disponibile";
+                                }
+                            ?>
+                        </td>
+                        <td><?php echo $hotel["vote"];?></td>
                         <td><?php echo $hotel["distance_to_center"]; ?></td>
                     </tr>
                 <?php endforeach; ?>
