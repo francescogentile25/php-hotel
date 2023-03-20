@@ -57,54 +57,29 @@ foreach ($hotels as $hotel) {
 ?>
 
 <body>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome Hotel</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distance dal centro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel): ?>
+                    <tr>
+                        <td><?php echo $hotel["name"]; ?></td>
+                        <td><?php echo $hotel["parking"]; ?></td>
+                        <td><?php echo $hotel["vote"]; ?></td>
+                        <td><?php echo $hotel["distance_to_center"]; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
-    <ul>
-        <?php foreach ($hotels as $hotel): ?>
-            <ul>
-                <li>
-                    <?php echo $hotel["name"]; ?>
-                </li>
-                <li>
-                    <?php echo $hotel["parking"]; ?>
-                </li>
-                <li>
-                    <?php echo $hotel["vote"]; ?>
-                </li>
-                <li>
-                    <?php echo $hotel["distance_to_center"]; ?>
-                </li>
-            </ul>
-        <?php endforeach; ?>
-    </ul>
 </body>
 
 </html>
